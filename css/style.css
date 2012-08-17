@@ -1,0 +1,29 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 36px;
+}
+
+article {
+  margin: 100px auto;
+  width: 1000px;
+  height: 600px;
+  display: block;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  box-sizing: padding-box;
+  text-align: right;
+}
+
+h1 { font-size: 60px; margin-top: 30px; font-weight: bold; }
+h2 { font-size: 30px; margin-bottom: 60px; }
+p  { line-height: 48px; }
+code {
+  display: inline-block;
+  box-sizing: padding-box;
+  font-family: Consolas, monaco, monospace;
+  padding: 20px;
+  margin: 20px;
+  width: 920px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.1);
+}
