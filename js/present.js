@@ -1,3 +1,5 @@
+/*jshint jquery:true */
+/*global window document console*/
 /*
  * Present.js
  * Lightweight online slideshow library
@@ -21,7 +23,6 @@
         $('body').append(nav);
 
         // Auto update current slide navigation helper
-        var slides = $('#slides article');
         var slideHeight = slides.outerHeight();
         window.setInterval(function () {
             var currentScroll = $('body').scrollTop();
@@ -30,5 +31,29 @@
             navs.removeClass('active');
             $(navs[slideNumber]).addClass('active');
         }, 100);
+
+        //////////////////////////////////////////
+        // Controls
+        function toSlide(number) {
+            var n = number || 0;
+            var height = n * (slideHeight + 200);
+            $('body').animate({scrollTop: height}, 400);
+        }
+
+        $('#nav li').click(function (event) {
+            var number = $(event.target).closest('li').data('number');
+            toSlide(number);
+        });
+
+        var KEY_LEFT = 37,
+            KEY_UP = 38,
+            KEY_RIGHT = 39,
+            KEY_DOWN = 40;
+        $(document).keydown(function (event) {
+            var number =  $('#nav li.active').data('number');
+            if (event.which === KEY_LEFT ||
+                event.which === KEY_UP) {
+
+            } });
     });
 })(jQuery, window, document);

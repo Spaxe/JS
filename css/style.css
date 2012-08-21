@@ -5,7 +5,7 @@ body {
 
 article {
   position: relative;
-  margin: 100px auto;
+  margin: 0 auto 200px auto;
   width: 976px;
   height: 720px;
   display: block;
@@ -36,7 +36,7 @@ code {
 /* Slide-specific styles */
 /*************************/
 .option-javascript-is {
-  width: 100px;
+  width: 100px;2
   height: 100px;
   border-radius: 50px;
   border-bottom: 20px solid rgba(0, 0, 0, 0.2);
