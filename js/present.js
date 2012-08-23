@@ -48,12 +48,23 @@
         var KEY_LEFT = 37,
             KEY_UP = 38,
             KEY_RIGHT = 39,
-            KEY_DOWN = 40;
+            KEY_DOWN = 40,
+            KEY_SPACE = 32;
         $(document).keydown(function (event) {
-            var number =  $('#nav li.active').data('number');
+            var number = $('#nav li.active').data('number');
+            var total = $('#nav li').size();
             if (event.which === KEY_LEFT ||
-                event.which === KEY_UP) {
-
-            } });
+                        event.which === KEY_UP) {
+                if (number !== 0)
+                    number--;
+                toSlide(number);
+            } else if (event.which === KEY_RIGHT ||
+                        event.which === KEY_DOWN ||
+                        event.which === KEY_SPACE) {
+                if (number !== total - 1)
+                    number++;
+                toSlide(number);
+            }
+        });
     });
 })(jQuery, window, document);
