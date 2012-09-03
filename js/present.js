@@ -1,13 +1,36 @@
-/*jshint jquery:true */
-/*global window document console*/
+/*jshint jquery:true laxbreak:true */
+/*global window document*/
 /*
  * Present.js
- * Lightweight online slideshow library
+ * Quick and dirty code for a slideshow.
  */
 ;(function($, window, document, undefined) {
-    $(document).ready(function () {
-        $('body').data('present-current', 0);
 
+    function clamp (x, min, max) {
+        if (x < min)
+            x = min;
+        else if (x > max)
+            x = max;
+        return x;
+    }
+
+    // Return total height, including margin and padding, of the slide.
+    function getSlideHeight () {
+        return $('#slides article').outerHeight(true);
+    }
+
+    // Get current slide number we're on
+    function getSlideNumber () {
+        var slideHeight = getSlideHeight();
+        var total = $('#nav li').size();
+        var currentScroll = $('body').scrollTop();
+        var slideNumber = Math.floor(currentScroll / slideHeight);
+        slideNumber = clamp(slideNumber, 0, total - 1);
+        return slideNumber;
+    }
+
+    // Set up controls and metadata
+    $(document).ready(function () {
         // Count the number of slides and insert nav hints
         var slides = $('#slides article');
         var nav = $('<ul id="nav">');
@@ -15,7 +38,6 @@
             var slide = $(x);
             var item = $('<li>');
             var name = slide.attr('title');
-            slide.data('number', i);
             item.data('number', i);
             item.html(name);
             nav.append(item);
@@ -23,21 +45,19 @@
         $('body').append(nav);
 
         // Auto update current slide navigation helper
-        var slideHeight = slides.outerHeight();
-        window.setInterval(function () {
-            var currentScroll = $('body').scrollTop();
-            var slideNumber = Math.floor(currentScroll / slideHeight);
+        $(document).scroll(function (event) {
+            var number = getSlideNumber();
             var navs = $('#nav > li');
             navs.removeClass('active');
-            $(navs[slideNumber]).addClass('active');
-        }, 100);
+            $(navs[number]).addClass('active');
+        });
 
         //////////////////////////////////////////
         // Controls
         function toSlide(number) {
-            var n = number || 0;
-            var height = n * (slideHeight + 200);
-            $('body').animate({scrollTop: height}, 400);
+            var slideHeight = getSlideHeight();
+            var height = number * (slideHeight);
+            $('body').stop(true).animate({scrollTop: height}, 350);
         }
 
         $('#nav li').click(function (event) {
@@ -45,25 +65,21 @@
             toSlide(number);
         });
 
-        var KEY_LEFT = 37,
-            KEY_UP = 38,
-            KEY_RIGHT = 39,
-            KEY_DOWN = 40,
-            KEY_SPACE = 32;
+        var KEY_UP = 38,
+            KEY_DOWN = 40;
         $(document).keydown(function (event) {
-            var number = $('#nav li.active').data('number');
-            var total = $('#nav li').size();
-            if (event.which === KEY_LEFT ||
-                        event.which === KEY_UP) {
-                if (number !== 0)
+            var total = $('#nav > li').size();
+            var number = getSlideNumber();
+            if (event.which === KEY_UP) {
+                if ($('body').is(':animated'))
                     number--;
-                toSlide(number);
-            } else if (event.which === KEY_RIGHT ||
-                        event.which === KEY_DOWN ||
-                        event.which === KEY_SPACE) {
-                if (number !== total - 1)
+                number = clamp(number, 0, total - 1);
+                toSlide(number - 1);
+            } else if (event.which === KEY_DOWN) {
+                if ($('body').is(':animated'))
                     number++;
-                toSlide(number);
+                number = clamp(number, 0, total - 1);
+                toSlide(number + 1);
             }
         });
     });
