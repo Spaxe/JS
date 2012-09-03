@@ -24,7 +24,7 @@
         var slideHeight = getSlideHeight();
         var total = $('#nav li').size();
         var currentScroll = $('body').scrollTop();
-        var slideNumber = Math.floor(currentScroll / slideHeight);
+        var slideNumber = Math.round(currentScroll / slideHeight);
         slideNumber = clamp(slideNumber, 0, total - 1);
         return slideNumber;
     }

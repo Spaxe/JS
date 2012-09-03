@@ -16,17 +16,25 @@ article {
 }
 article:last-child { margin-bottom: 0px; }
 
+p { display: inline-block; width: 100%; line-height: 1.25; }
 strong, .bold { font-weight: bold; }
+em { font-style: oblique; }
 
-code {
+pre {
   display: inline-block;
   box-sizing: padding-box;
   font-family: Consolas, monaco, monospace;
+  font-size: 60px;
   padding: 20px;
-  margin: 20px;
-  width: 920px;
+  margin: 20px 0;
+  width: 976px;
   text-align: left;
-  background: rgba(0, 0, 0, 0.1);
+}
+.full {
+  display: block;
+  width: 976px;
+  height: 100%;
+  margin: 0;
 }
 
 .row1 { position: absolute; top: 60px; }
@@ -37,13 +45,19 @@ code {
 .row6 { position: absolute; top: 360px; }
 .row7 { position: absolute; top: 420px; }
 .row8 { position: absolute; top: 480px; }
-.row0 { position: absolute; top: 540px; }
+.row9 { position: absolute; top: 540px; }
+.right { text-align: right; }
+.small { font-size: 40px; }
+
+.normal { color: white; }
+.grey { color: #898989; }
+.yellow { color: #ffa95c; }
 
 /*************************/
 /* Slide-specific styles */
 /*************************/
 .option-javascript-is {
-  width: 100px;2
+  width: 100px;
   height: 100px;
   border-radius: 50px;
   border-bottom: 20px solid rgba(0, 0, 0, 0.2);
