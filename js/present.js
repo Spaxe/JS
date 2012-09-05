@@ -29,6 +29,31 @@
         return slideNumber;
     }
 
+    // Change background based on the slide you're on
+    function updateBackground (number) {
+        var meta = {duration: 200, queue: false};
+        var slides = $('#slides article');
+        var background = $(slides[number]).data('background');
+        if (background)
+            $('body').animate({backgroundColor: background}, meta);
+        else
+            $('body').animate({backgroundColor: 'black'}, meta);
+    }
+
+    // Scroll to slide
+    function toSlide(number) {
+        var meta = {duration: 350, queue: false};
+        var slideHeight = getSlideHeight();
+        var height = number * (slideHeight);
+        $('body')
+            .stop(true, true)
+            .data('scrolling', true)
+            .animate({scrollTop: height}, meta, 'swing', function () {
+                $('body').data('scrolling', false);
+                updateBackground(number);
+            });
+    }
+
     // Set up controls and metadata
     $(document).ready(function () {
         // Count the number of slides and insert nav hints
@@ -47,37 +72,15 @@
         // Auto update current slide navigation helper
         $(document).scroll(function (event) {
             // Update navigation
-            var slides = $('#slides article');
             var number = getSlideNumber();
             var navs = $('#nav > li');
             navs.removeClass('active');
             $(navs[number]).addClass('active');
+            updateBackground(getSlideNumber());
         });
-
-        // Change background based on the slide you're on
-        function updateBackground (number) {
-            var background = $(slides[number]).data('background');
-            if (background) {
-                $('body').animate({backgroundColor: background}, 200);
-            } else {
-                $('body').animate({backgroundColor: 'black'}, 200);
-            }
-        }
 
         //////////////////////////////////////////
         // Controls
-        function toSlide(number) {
-            var slideHeight = getSlideHeight();
-            var height = number * (slideHeight);
-            $('body')
-                .stop(true)
-                .data('scrolling', true)
-                .animate({scrollTop: height}, 350, 'swing', function () {
-                    $('body').data('scrolling', false);
-                    updateBackground(number);
-                });
-        }
-
         $('#nav li').click(function (event) {
             var number = $(event.target).closest('li').data('number');
             toSlide(number);
@@ -89,12 +92,12 @@
             var total = $('#nav > li').size();
             var number = getSlideNumber();
             if (event.which === KEY_UP) {
-                if ($('body').data('scrolling'))
+                if ($('body').data('scrolling') == "true")
                     number--;
                 number = clamp(number, 0, total - 1);
                 toSlide(number - 1);
             } else if (event.which === KEY_DOWN) {
-                if ($('body').data('scrolling'))
+                if ($('body').data('scrolling') == "true")
                     number++;
                 number = clamp(number, 0, total - 1);
                 toSlide(number + 1);
