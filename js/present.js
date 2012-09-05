@@ -46,18 +46,36 @@
 
         // Auto update current slide navigation helper
         $(document).scroll(function (event) {
+            // Update navigation
+            var slides = $('#slides article');
             var number = getSlideNumber();
             var navs = $('#nav > li');
             navs.removeClass('active');
             $(navs[number]).addClass('active');
         });
 
+        // Change background based on the slide you're on
+        function updateBackground (number) {
+            var background = $(slides[number]).data('background');
+            if (background) {
+                $('body').animate({backgroundColor: background}, 200);
+            } else {
+                $('body').animate({backgroundColor: 'black'}, 200);
+            }
+        }
+
         //////////////////////////////////////////
         // Controls
         function toSlide(number) {
             var slideHeight = getSlideHeight();
             var height = number * (slideHeight);
-            $('body').stop(true).animate({scrollTop: height}, 350);
+            $('body')
+                .stop(true)
+                .data('scrolling', true)
+                .animate({scrollTop: height}, 350, 'swing', function () {
+                    $('body').data('scrolling', false);
+                    updateBackground(number);
+                });
         }
 
         $('#nav li').click(function (event) {
@@ -71,12 +89,12 @@
             var total = $('#nav > li').size();
             var number = getSlideNumber();
             if (event.which === KEY_UP) {
-                if ($('body').is(':animated'))
+                if ($('body').data('scrolling'))
                     number--;
                 number = clamp(number, 0, total - 1);
                 toSlide(number - 1);
             } else if (event.which === KEY_DOWN) {
-                if ($('body').is(':animated'))
+                if ($('body').data('scrolling'))
                     number++;
                 number = clamp(number, 0, total - 1);
                 toSlide(number + 1);
