@@ -13,10 +13,11 @@ article {
   display: block;
   padding: 24px;
   font-size: 60px;
+  overflow: hidden;
 }
 article:last-child { margin-bottom: 0px; }
 
-p { display: inline-block; width: 100%; line-height: 1.25; }
+p { display: inline-block; width: 976px; line-height: 1.25; }
 strong, .bold { font-weight: bold; }
 em { font-style: oblique; }
 
@@ -48,11 +49,21 @@ pre {
 .row9 { position: absolute; top: 540px; }
 .right { text-align: right; }
 .small { font-size: 40px; }
+.thin { font-family: "Arial Narrow", Arial, sans-serif; }
+.rockwell { font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif; }
 
 .normal { color: white; }
 .black { color: black; }
 .grey { color: #898989; }
 .yellow { color: #ffa95c; }
+.brown { color: #b6700e; }
+
+.tilt30 {
+  -webkit-transform: rotate(-35deg);
+  -moz-transform: rotate(-35deg);
+  -ms-transform: rotate(-35deg);
+  -o-transform: rotate(-35deg);
+}
 
 /*************************/
 /* Slide-specific styles */
