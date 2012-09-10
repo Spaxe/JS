@@ -67,8 +67,8 @@ var shop = "Max Brenners";
 var isOpen = true;
 var chocolateTypes = ["white", "milk",
                       "dark"];
-var orderStatus: {11: "preparing",
-                  93: "served"};</code></pre>
+var orderStatus = {11: "preparing",
+                   93: "served"};</code></pre>
       </article>
 
       <article class="yellow">
@@ -137,7 +137,7 @@ var orderStatus: {11: "preparing",
         interface
         long
         native
-        new
+        <span class="yellow">new</span>
         <span class="yellow">null</span>
         package
         private
@@ -188,7 +188,7 @@ true                      // Boolean
             <td width="200">NaN</td>
           </tr>
           <tr class="small yellow thin">
-            <td>Decimal</td>
+            <td>Number</td>
             <td>Too large<br>(or too small)</td>
             <td>Not a number</td>
           </tr>
@@ -215,8 +215,34 @@ true                      // Boolean
         <p class="row3 small">Usually written with brackets <span class="white">[]</span>.</p>
         <pre class="row4 small"><code data-language="javascript">var types = ["white", "milk", "dark"];</code></pre>
         <p class="row6 small">Access data with brackets:</p>
-        <pre class="row7 small"><code data-language="javascript">types[0]             // 1st item "white"
-types[2] = "spicy";  // Change 3rd item</code></pre>
+        <pre class="row7 small"><code data-language="javascript">var order = types[0];// 1st item "white"
+types[2]  = "spicy"; // Change 3rd item</code></pre>
+      </article>
+
+      <article>
+        <pre class="row2 small"><code data-language="javascript">var orderStatus = {
+    11: "preparing",
+    93: "served"
+};
+var s1 = orderStatus[93];   // "served"
+orderStatus[11] = "served";
+</code></pre>
+        <p class="row8 small">They come in {<span class="white">key</span>: <span class="white">value</span>} pairs.</p>
+        <p class="row9 grey small">(Similar to an Array? It's more powerful.)</p>
+        <p class="row1 bold">Object</p>
+      </article>
+
+      <article>
+        <pre class="row2 small"><code data-language="javascript">var menu = {
+    waffleForOne: 12,
+    waffleForTwo: 16,
+    bananaCrepe: 14
+};
+var order = menu.waffleForTwo
+          + menu.bananaCrepe;   // 26
+</code></pre>
+        <p class="row8 small">If keys are named like identifiers, their values can be accessed by the dot <span class="white">.</span> operator.</p>
+        <p class="row1 bold">Object</p>
       </article>
 
       <article>
