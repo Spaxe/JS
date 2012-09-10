@@ -17,9 +17,10 @@ article {
 }
 article:last-child { margin-bottom: 0px; }
 
-p { display: inline-block; width: 976px; line-height: 1.25; }
+p, ul, ol { display: inline-block; width: 976px; line-height: 1.25; }
 strong, .bold { font-weight: bold; }
 em { font-style: oblique; }
+li:before { content: "♦"; margin: 0 25px; }
 
 pre {
   display: inline-block;
@@ -34,10 +35,11 @@ pre {
 .full {
   display: block;
   width: 976px;
-  height: 100%;
+  height: 720px;
   margin: 0;
 }
 
+.row0 { position: absolute; top: 0; }
 .row1 { position: absolute; top: 60px; }
 .row2 { position: absolute; top: 120px; }
 .row3 { position: absolute; top: 180px; }
@@ -47,16 +49,26 @@ pre {
 .row7 { position: absolute; top: 420px; }
 .row8 { position: absolute; top: 480px; }
 .row9 { position: absolute; top: 540px; }
-.right { text-align: right; }
+
+.left { left: 0; }
+.right { right: 0; }
+.textright { text-align: right; }
+
 .small { font-size: 40px; }
+.big { font-size: 80px; }
 .thin { font-family: "Arial Narrow", Arial, sans-serif; }
 .rockwell { font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif; }
+.code { font-family: Consolas, monaco, monospace; }
 
 .normal { color: white; }
 .black { color: black; }
 .grey { color: #898989; }
-.yellow { color: #ffa95c; }
-.brown { color: #b6700e; }
+.yellow { color: #e89423; }
+.brown { color: #714609; }
+
+.blackBG { background: black; }
+
+.halfwidth { width: 488px; }
 
 .tilt30 {
   -webkit-transform: rotate(-35deg);
