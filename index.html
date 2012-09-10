@@ -20,17 +20,17 @@
     <section id="slides">
 
       <article>
-        <span class="row5 grey">&lt;script type="text/<strong class="yellow">javascript</strong>"&gt;</span>
+        <span class="row5">&lt;script type="text/<strong class="white">javascript</strong>"&gt;</span>
       </article>
 
       <article>
-        <p class="row3 grey">“<span class="normal">Javascript is</span> a prototype-based scripting language that is <span class="normal"><em>dynamic</em>, <em>weakly typed</em> and has <em>first-class functions</em>.</span>”</p>
-        <p class="row8 right grey">— Wikipedia</p>
+        <p class="row3 grey">“<span class="white">Javascript is</span> a prototype-based scripting language that is <span class="white"><em>dynamic</em>, <em>weakly typed</em> and has <em>first-class functions</em>.</span>”</p>
+        <p class="row8 textright grey">— Wikipedia</p>
       </article>
 
       <article>
         <p class="row4">Open your Browser Console.</p>
-        <p class="row6 small grey">(if you don't know how, Google it.)</p>
+        <p class="row6 small grey">(Try <span class="white">F12</span>, <span class="white">Ctrl+Shift+I</span>, or <span class="white">⌘⌥ I</span>.)</p>
       </article>
 
       <article>
@@ -58,31 +58,129 @@ z = x * y</code></pre>
         <p class="row6 brown halfwidth textright rockwell"><br>Functions</p>
       </article>
 
-      <article data-background="#e89423" class="black rockwell">
+      <article>
         <p class="row1 bold">Variables</p>
-        <p class="row3 code small"><strong>var</strong> item = "Italian Thick Chocolate";<br>
-<strong>var</strong> shop = "Max Brenners";<br>
-<strong>var</strong>
- price = 6.5;</p>
-        <p class="row7 brown">Don't forget the "var" keyword!</p>
+        <pre class="row2 small"><code data-language="javascript">var price = 6.5;
+var quantity = 3;
+var item = "Italian Thick Chocolate";
+var shop = "Max Brenners";
+var isOpen = true;
+var chocolateTypes = ["white", "milk",
+                      "dark"];
+var orderStatus: {11: "preparing",
+                  93: "served"};</code></pre>
       </article>
 
-      <article data-background="#e89423" class="black rockwell">
-        <p class="row1 bold">Variable Names</p>
-        <p class="row3 small">In programming, names are called <em>Identifiers</em>.</p>
-        <p class="row4 small">In Javascript, identifiers can only have:</p>
-        <ul class="row6 small">
-          <li>letters [A-Za-z]</li>
-          <li>numbers [0-9]</li>
-          <li>dollar signs [$]</li>
-          <li>underscores [_]</li>
-        </ul>
+      <article class="yellow">
+        <p class="row1 bold">Declaring Variables</p>
+        <pre class="row3 small"><code data-language="javascript">var</code></pre>
+        <p class="row6 small">Always declare variables with <em class="white">var</em>.</p>
+        <p class="row7 grey small">(We'll talk about why later.)</p>
+      </article>
+
+      <article>
+        <p class="row1 bold yellow">Naming Variables</p>
+        <pre class="row2 small"><code data-language="javascript">var item</code></pre>
+        <p class="row4 grey small">In programming, names are called <em class="white">Identifiers</em>.</p>
+        <p class="row6 grey small">You can only use:</p>
+        <table class="row7 big white bold">
+          <tr>
+            <td width="400">A-Za-z</td>
+            <td width="250">0-9</td>
+            <td width="200">$</td>
+            <td width="120">_</td>
+          </tr>
+          <tr class="small yellow thin">
+            <td>Letters</td>
+            <td>Digits</td>
+            <td>Dollar Sign</td>
+            <td>Underscore</td>
+          </tr>
+        </table>
+      </article>
+
+      <article>
+        <p class="row1 bold small">Reserved Words</p>
+        <p class="row2 grey small">
+abstract
+boolean
+<span class="yellow">break</span>
+byte
+case
+catch
+char
+class
+const
+<span class="yellow">continue</span>
+debugger
+default
+delete
+<span class="yellow">do</span>
+double
+<span class="yellow">else</span>
+enum
+export
+extends
+<span class="yellow">false</span>
+final
+finally
+float
+<span class="yellow">for</span>
+<span class="yellow">function</span>
+goto
+<span class="yellow">if</span>
+implements
+import
+<span class="yellow">in</span>
+instanceof
+int
+interface
+long
+native
+new
+<span class="yellow">null</span>
+package
+private
+protected
+public
+<span class="yellow">return</span>
+short
+static
+super
+switch
+synchronized
+this
+throw
+throws
+transient
+<span class="yellow">true</span>
+try
+typeof
+<span class="yellow">var</span>
+void
+volatile
+<span class="yellow">while</span>
+with
+</p>
+<p class="row9 grey small">(You also can't use any of these as names. )</p>
+      </article>
+
+      <article>
+        <p class="row1 bold">Variable Types</p>
+        <pre class="row2 small"><code data-language="javascript">6.5                       // Number
+3                         // Number
+"Italian Thick Chocolate" // String
+"Max Brenners"            // String
+true                      // Boolean
+["white", "milk", "dark"] // Array
+{11: "preparing",
+ 93: "served"}            // Object</code></pre>
       </article>
 
       <article data-background="#e89423" class="black rockwell">
         <p class="row1 bold">Scope</p>
         <p class="row3 small">Variables have a defined lifespan.  They become <em>undefined</em> when they "go out of scope".</p>
-        <p class="row5 small">Scopes are defined by functions.
+        <p class="row5 small">Scopes are defined by functions.</p>
       </article>
 
       <article>

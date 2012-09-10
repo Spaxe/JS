@@ -1,8 +1,8 @@
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif;
   font-size: 36px;
   background-color: black;
-  color: white;
+  color: #e89423;
 }
 
 article {
@@ -17,7 +17,7 @@ article {
 }
 article:last-child { margin-bottom: 0px; }
 
-p, ul, ol { display: inline-block; width: 976px; line-height: 1.25; }
+p, ul, ol, table { display: inline-block; width: 976px; line-height: 1.25; }
 strong, .bold { font-weight: bold; }
 em { font-style: oblique; }
 li:before { content: "♦"; margin: 0 25px; }
@@ -55,12 +55,12 @@ pre {
 .textright { text-align: right; }
 
 .small { font-size: 40px; }
+.medium { font-size: 60px; }
 .big { font-size: 80px; }
-.thin { font-family: "Arial Narrow", Arial, sans-serif; }
-.rockwell { font-family: Rockwell, "Courier Bold", Courier, Georgia, Times, "Times New Roman", serif; }
+.thin { font-weight: normal; }
 .code { font-family: Consolas, monaco, monospace; }
 
-.normal { color: white; }
+.white { color: white; }
 .black { color: black; }
 .grey { color: #898989; }
 .yellow { color: #e89423; }
@@ -97,6 +97,7 @@ pre {
   position: fixed;
   right: 0;
   top: 200px;
+  color: white;
 }
 
 #nav > li {
@@ -104,7 +105,6 @@ pre {
   line-height: 16px;
   display: block;
   height: 16px;
-  border-right: 5px solid white;
   margin: 2px 20px 2px 0;
   padding-right: 10px;
   text-align: right;
