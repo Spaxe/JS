@@ -34,7 +34,6 @@
       </article>
 
       <article>
-        <p class="row1">Try out the following lines.</p>
         <pre class="row2"><code data-language="javascript">1 + 1
 2 * 1.5
 10 / 3
@@ -42,20 +41,21 @@ Math.pow(5, 2)
 x = -4
 y = 3 - 6
 z = x * y</code></pre>
+        <p class="row1">Try out the following lines.</p>
       </article>
 
       <article data-background="#e89423">
-        <p class="row4 brown rockwell tilt30"
+        <p class="row4 brown tilt30"
            style="font-size: 120px;">Basic</p>
-        <p class="row5 black rockwell tilt30"
+        <p class="row5 black tilt30"
            style="font-size: 160px">Programming!</p>
       </article>
 
       <article data-background="#e89423">
-        <p class="row0 black bold halfwidth right rockwell"><br><br>Variables<br>Types</p>
-        <p class="row0 brown halfwidth textright rockwell"><br><br>Data</p>
-        <p class="row6 black bold halfwidth right rockwell"><br>Operators<br>Functions<br>Flow Control</p>
-        <p class="row6 brown halfwidth textright rockwell"><br>Functions</p>
+        <p class="row0 black bold halfwidth right"><br><br>Variables<br>Types</p>
+        <p class="row0 brown halfwidth textright"><br><br>Data</p>
+        <p class="row6 black bold halfwidth right"><br>Operators<br>Functions<br>Flow Control</p>
+        <p class="row6 brown halfwidth textright"><br>Functions</p>
       </article>
 
       <article>
@@ -72,14 +72,13 @@ var orderStatus: {11: "preparing",
       </article>
 
       <article class="yellow">
+        <pre class="row2 small"><code data-language="javascript">var</code></pre>
+        <p class="row5 small">Always declare variables with <em class="white">var</em>.</p>
+        <p class="row6 grey small">(We'll talk about why later.)</p>
         <p class="row1 bold">Declaring Variables</p>
-        <pre class="row3 small"><code data-language="javascript">var</code></pre>
-        <p class="row6 small">Always declare variables with <em class="white">var</em>.</p>
-        <p class="row7 grey small">(We'll talk about why later.)</p>
       </article>
 
       <article>
-        <p class="row1 bold yellow">Naming Variables</p>
         <pre class="row2 small"><code data-language="javascript">var item</code></pre>
         <p class="row4 grey small">In programming, names are called <em class="white">Identifiers</em>.</p>
         <p class="row6 grey small">You can only use:</p>
@@ -97,76 +96,76 @@ var orderStatus: {11: "preparing",
             <td>Underscore</td>
           </tr>
         </table>
+        <p class="row1 bold yellow">Naming Variables</p>
       </article>
 
       <article>
         <p class="row1 bold small">Reserved Words</p>
         <p class="row2 grey small">
-abstract
-boolean
-<span class="yellow">break</span>
-byte
-case
-catch
-char
-class
-const
-<span class="yellow">continue</span>
-debugger
-default
-delete
-<span class="yellow">do</span>
-double
-<span class="yellow">else</span>
-enum
-export
-extends
-<span class="yellow">false</span>
-final
-finally
-float
-<span class="yellow">for</span>
-<span class="yellow">function</span>
-goto
-<span class="yellow">if</span>
-implements
-import
-<span class="yellow">in</span>
-instanceof
-int
-interface
-long
-native
-new
-<span class="yellow">null</span>
-package
-private
-protected
-public
-<span class="yellow">return</span>
-short
-static
-super
-switch
-synchronized
-this
-throw
-throws
-transient
-<span class="yellow">true</span>
-try
-typeof
-<span class="yellow">var</span>
-void
-volatile
-<span class="yellow">while</span>
-with
-</p>
-<p class="row9 grey small">(You also can't use any of these as names. )</p>
+        abstract
+        boolean
+        <span class="yellow">break</span>
+        byte
+        case
+        catch
+        char
+        class
+        const
+        <span class="yellow">continue</span>
+        debugger
+        default
+        delete
+        <span class="yellow">do</span>
+        double
+        <span class="yellow">else</span>
+        enum
+        export
+        extends
+        <span class="yellow">false</span>
+        final
+        finally
+        float
+        <span class="yellow">for</span>
+        <span class="yellow">function</span>
+        goto
+        <span class="yellow">if</span>
+        implements
+        import
+        <span class="yellow">in</span>
+        instanceof
+        int
+        interface
+        long
+        native
+        new
+        <span class="yellow">null</span>
+        package
+        private
+        protected
+        public
+        <span class="yellow">return</span>
+        short
+        static
+        super
+        switch
+        synchronized
+        this
+        throw
+        throws
+        transient
+        <span class="yellow">true</span>
+        try
+        typeof
+        <span class="yellow">var</span>
+        void
+        volatile
+        <span class="yellow">while</span>
+        with
+        </p>
+        <p class="row9 grey small">(You also can't use any of these as names. )</p>
       </article>
 
       <article>
-        <p class="row1 bold">Variable Types</p>
         <pre class="row2 small"><code data-language="javascript">6.5                       // Number
 3                         // Number
 "Italian Thick Chocolate" // String
@@ -175,12 +174,49 @@ true                      // Boolean
 ["white", "milk", "dark"] // Array
 {11: "preparing",
  93: "served"}            // Object</code></pre>
+        <p class="row1 bold">Variable Types</p>
       </article>
 
-      <article data-background="#e89423" class="black rockwell">
-        <p class="row1 bold">Scope</p>
-        <p class="row3 small">Variables have a defined lifespan.  They become <em>undefined</em> when they "go out of scope".</p>
-        <p class="row5 small">Scopes are defined by functions.</p>
+      <article>
+        <p class="row1 bold">Number</p>
+        <p class="row3 small grey">IEEE 754 Double Precision Format</p>
+        <p class="row5 grey small">Or, in English:</p>
+        <table class="row6 big white bold">
+          <tr>
+            <td width="300">±0.123</td>
+            <td width="400">Infinity</td>
+            <td width="200">NaN</td>
+          </tr>
+          <tr class="small yellow thin">
+            <td>Decimal</td>
+            <td>Too large<br>(or too small)</td>
+            <td>Not a number</td>
+          </tr>
+        </table>
+      </article>
+
+      <article>
+        <pre class="row2 small"><code data-language="javascript">"Anything you want in here"</code></pre>
+        <pre class="row4 small"><code data-language="javascript">'¡ooʇ sʞɹoʍ sıɥʇ'</code></pre>
+        <pre class="row6 small"><code data-language="javascript">'Quoth the Raven, "Nevermore."'</code></pre>
+        <pre class="row8 small"><code data-language="javascript">"It's okay to \"nest\" quotes."</code></pre>
+        <p class="rowA grey small">(<span class="yellow">\"</span> represents <span class="yellow">"</span> in the string.)</p>
+        <p class="row1 bold">String</p>
+      </article>
+
+      <article>
+        <p class="row1 bold">Boolean</p>
+        <p class="row3"><span class="white">true</span> or <span class="white">false</span>.</p>
+        <p class="row5 grey small">(Yup, that's it.)</p>
+      </article>
+
+      <article>
+        <p class="row1 bold">Array</p>
+        <p class="row3 small">Usually written with brackets <span class="white">[]</span>.</p>
+        <pre class="row4 small"><code data-language="javascript">var types = ["white", "milk", "dark"];</code></pre>
+        <p class="row6 small">Access data with brackets:</p>
+        <pre class="row7 small"><code data-language="javascript">types[0]             // 1st item "white"
+types[2] = "spicy";  // Change 3rd item</code></pre>
       </article>
 
       <article>
