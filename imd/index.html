@@ -33,6 +33,12 @@
       </article>
 
       <article>
+        <p class="row3 white">Chocolate is tasty.</p>
+        <p class="row5 white">Computers can decide.</p>
+        <p class="row7 white">Interaction rocks.</p>
+      </article>
+
+      <article>
         <p class="row4">Open your Browser Console.</p>
         <p class="row6 small grey">(Try <span class="white">F12</span>, <span class="white">Ctrl+Shift+I</span>, or <span class="white">⌘⌥ I</span>.)</p>
       </article>
@@ -119,7 +125,7 @@ var orderStatus = {11: "preparing",
         debugger
         default
         delete
-        <span class="yellow">do</span>
+        do
         double
         <span class="yellow">else</span>
         enum
@@ -141,8 +147,8 @@ var orderStatus = {11: "preparing",
         interface
         long
         native
-        <span class="yellow">new</span>
-        <span class="yellow">null</span>
+        new
+        null
         package
         private
         protected
@@ -310,24 +316,71 @@ true || true     // true</code></pre>
         <pre class="row2"><code data-language="javascript">function add(a, b) {
   return a + b;
 }</code></pre>
-        <p class="row7 small">You can call a function.</p>
+        <p class="row7 small">You can then call:</p>
         <pre class="row8"><code data-language="javascript">var result = add(10, 90);</code></pre>
         <p class="row1 bold">Functions</p>
       </article>
 
       <article>
-        <pre class="row2 small"><code data-language="javascript">function holy(object) {
-  return "Holy " + object;
+        <pre class="row2 small"><code data-language="javascript">function holy(thing) {
+  return "Holy " + thing;
 }
 
-function steel(object) {
-  return object + " of steel";
+function steel(thing) {
+  return thing + " of steel";
 }
 
 function question() {
   return holy(steel("Batman"));
 }</code></pre>
         <p class="row1 bold">Functions, part II</p>
+      </article>
+
+      <article>
+        <pre class="row2 small"><code data-language="javascript">function multiply(a, b, andThenFunc) {
+  var c = a * b;
+  return andThenFunc(c);
+}
+
+var x = multiply(2, 5, function(c) {
+  return c - 3;
+});
+
+// x == 7</code></pre>
+        <p class="row1 bold">Functions are First-Class</p>
+      </article>
+
+      <article data-background="#e89423" class="black">
+        <p class="row4 bold">..-. .-.. --- .--</p>
+        <p class="row6 bold">-.-. --- -. - .-. --- .-.. </p>
+      </article>
+
+      <article>
+        <pre class="row2 small"><code data-language="javascript">function picky(food) {
+  if (food.colour === 'red') {
+    return 'Sure!';
+  } else if (food.colour === 'yellow') {
+    return 'No way.';
+  } else {
+    return 'Maybe.';
+  }
+}
+
+var answer = picky({colour: 'green'});</code></pre>
+        <p class="row1 bold">Conditional Execution</p>
+      </article>
+
+      <article>
+        <pre class="row2 smaller"><code data-language="javascript">function withCheese(items) {
+  for (var i = 0; i < items.length; i++) {
+    items[i] = items[i] + " with Cheese";
+  }
+  return items;
+}
+
+var menu = ["chicken", "wine", "bread"];
+var cheesy = withCheese(menu);</code></pre>
+        <p class="row1 bold">Loops</p>
       </article>
 
     </section>

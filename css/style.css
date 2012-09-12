@@ -55,6 +55,7 @@ pre {
 .right { right: 0; }
 .textright { text-align: right; }
 
+.smaller { font-size: 35px; }
 .small { font-size: 40px; }
 .medium { font-size: 60px; }
 .big { font-size: 80px; }
@@ -97,7 +98,7 @@ pre {
 #nav {
   position: fixed;
   right: 0;
-  top: 200px;
+  top: 20px;
   color: white;
   width: auto;
 }
