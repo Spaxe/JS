@@ -29,6 +29,10 @@
       </article>
 
       <article>
+        <p class="row5 white small">Javascript runs on every browser today.</p>
+      </article>
+
+      <article>
         <p class="row4">Open your Browser Console.</p>
         <p class="row6 small grey">(Try <span class="white">F12</span>, <span class="white">Ctrl+Shift+I</span>, or <span class="white">⌘⌥ I</span>.)</p>
       </article>
@@ -55,7 +59,7 @@ z = x * y</code></pre>
         <p class="row0 black bold halfwidth right"><br><br>Variables<br>Types</p>
         <p class="row0 brown halfwidth textright"><br><br>Data</p>
         <p class="row6 black bold halfwidth right"><br>Operators<br>Functions<br>Flow Control</p>
-        <p class="row6 brown halfwidth textright"><br>Functions</p>
+        <p class="row6 brown halfwidth textright"><br>Actions</p>
       </article>
 
       <article>
@@ -242,20 +246,88 @@ var order = menu.waffleForTwo
           + menu.bananaCrepe;   // 26
 </code></pre>
         <p class="row8 small">If keys are named like identifiers, their values can be accessed by the dot <span class="white">.</span> operator.</p>
-        <p class="row1 bold">Object</p>
+        <p class="row1 bold">Object continued</p>
+      </article>
+
+      <article data-background="#e89423" class="black">
+        <p class="row1">What are their types?</p>
+        <p class="row3 big bold code">89.3<br>
+[2, 3, 4, "hello"]<br>
+{colour: yellow}<br>
+"Hi there!"<br>
+true</p>
       </article>
 
       <article>
         <p class="row3 small">You've already seen a few:</p>
         <pre class="row4 small"><code data-language="javascript">+ - * / =</code></pre>
+        <p class="row6 small">You can use <span class="white">+</span> to concatenate strings:</p>
+        <pre class="row7 small"><code data-language="javascript">var fruit = "apple";
+var fruits = fruit + " and orange";</code></pre>
         <p class="row1 bold">Operators</p>
       </article>
 
       <article>
-        <p class="row1 yellow small">Functions</p>
+        <p class="row3 small">Some are familiar, some might be strange.</p>
+        <pre class="row4 small"><code data-language="javascript">1 < 2
+4 > 3
+2 <= 2
+3 >= 1
+1 != 2
+5 == 5</code></pre>
+        <p class="rowA small">The "bang" <span class="white">!</span> here means "<span class="white"><em>not</em></span>".</p>
+        <p class="row1 bold">Comparisons</p>
+      </article>
+
+      <article>
+        <pre class="row2 small"><code data-language="javascript">1 === 1       // true
+1 === "1"     // false
+1 == 1        // true
+1 == "1"      // true</code></pre>
+        <p class="row6 small">They compare both <span class="white">value</span> and <span class="white">type</span>.</p>
+        <p class="row8 small">Good practice: prefer === over == and !== over !=.</p>
+        <p class="row9 small grey">(We'll talk about why later.)</p>
+        <p class="row1 bold">"Triple Equals" Comparisons
+      </article>
+
+      <article>
+        <pre class="row2 small"><code data-language="javascript">&& || !</code></pre>
+        <p class="row4 small">You can <span class="white">combine</span> two Boolean values:</p>
+        <pre class="row5 small"><code data-language="javascript">true && false    // false
+true && true     // true
+true || false    // true
+true || true     // true</code></pre>
+        <p class="row9 small">Or <span class="white">reverse</span> one:</p>
+        <pre class="rowA small"><code data-language="javascript">!true            // false</code></pre>
+        <p class="row1 bold">Logical Operators</p>
+      </article>
+
+      <article>
+        <p class="row4 bold code" style="font-size:180px;">function()</p>
+      </article>
+
+      <article>
         <pre class="row2"><code data-language="javascript">function add(a, b) {
   return a + b;
 }</code></pre>
+        <p class="row7 small">You can call a function.</p>
+        <pre class="row8"><code data-language="javascript">var result = add(10, 90);</code></pre>
+        <p class="row1 bold">Functions</p>
+      </article>
+
+      <article>
+        <pre class="row2 small"><code data-language="javascript">function holy(object) {
+  return "Holy " + object;
+}
+
+function steel(object) {
+  return object + " of steel";
+}
+
+function question() {
+  return holy(steel("Batman"));
+}</code></pre>
+        <p class="row1 bold">Functions, part II</p>
       </article>
 
     </section>
