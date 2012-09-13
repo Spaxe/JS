@@ -98,9 +98,13 @@ pre {
 #nav {
   position: fixed;
   right: 0;
-  top: 100px;
+  top: 80px;
   color: white;
   width: auto;
+  opacity: 0.5;
+}
+#nav:hover {
+  opacity: 1;
 }
 
 #nav > li {
@@ -122,14 +126,25 @@ pre {
 /* Captions */
 /************/
 #caption {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  position: absolute;
-  width: 976px;
+  color: grey;
+  font-size: 24px;
+  padding: 10px 50px;
+  position: fixed;
+  width: 100%;
+  height: 50px;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
+  box-sizing: padding-box;
+  background: rgba(255, 255, 255, 0.25);
+}
+#caption.hidden {
+  bottom: -30px;
+  opacity: 0;
+}
+#caption.hidden:hover {
+  bottom: 0;
+  opacity: 1;
 }
 
 .caption {
   display: none;
-  visibility: hidden;
 }

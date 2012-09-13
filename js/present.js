@@ -14,6 +14,19 @@
         return x;
     }
 
+    // Fill in the caption and display it if we have one
+    function updateCaption (number) {
+        var captionContainer = $('#caption');
+        if (captionContainer.size() < 1)
+            $('body').append('<div id="caption" class="hidden" title="click to toggle caption"></div>');
+        var slides = $('#slides article');
+        var caption = $(slides[number]).find('.caption');
+        if (caption)
+            $('#caption').text($(caption).text());
+        else
+            $('#caption').text('');
+    }
+
     // Return total height, including margin and padding, of the slide.
     function getSlideHeight () {
         return $('#slides article').outerHeight(true);
@@ -40,6 +53,13 @@
             $('body').animate({backgroundColor: 'black'}, meta);
     }
 
+    // Update elements to match current state
+    function update() {
+        var number = getSlideNumber();
+        updateBackground(number);
+        updateCaption(number);
+    }
+
     // Scroll to slide
     function toSlide(number) {
         var meta = {duration: 350, queue: false};
@@ -50,7 +70,7 @@
             .data('scrolling', true)
             .animate({scrollTop: height}, meta, 'swing', function () {
                 $('body').data('scrolling', false);
-                updateBackground(number);
+                update();
             });
     }
 
@@ -68,6 +88,7 @@
             nav.append(item);
         });
         $('body').append(nav);
+        update();
 
         // Auto update current slide navigation helper
         $(document).scroll(function (event) {
@@ -76,7 +97,12 @@
             var navs = $('#nav > li');
             navs.removeClass('active');
             $(navs[number]).addClass('active');
-            updateBackground(getSlideNumber());
+            update();
+        });
+
+        // Toggle caption
+        $('#caption').click(function (event) {
+            $('#caption').toggleClass('hidden');
         });
 
         //////////////////////////////////////////
