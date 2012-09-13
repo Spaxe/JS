@@ -1,5 +1,5 @@
 body {
-  font-family: Rockwell, Georgia, Times, "Times New Roman", serif;
+  font-family: "Bitter", Rockwell, Georgia, Times, "Times New Roman", serif;
   font-size: 36px;
   background-color: black;
   color: #e89423;
@@ -98,7 +98,7 @@ pre {
 #nav {
   position: fixed;
   right: 0;
-  top: 20px;
+  top: 100px;
   color: white;
   width: auto;
 }
@@ -116,4 +116,20 @@ pre {
 
 #nav > li.active {
   opacity: 0.5;
+}
+
+/************/
+/* Captions */
+/************/
+#caption {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  position: absolute;
+  width: 976px;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.caption {
+  display: none;
+  visibility: hidden;
 }

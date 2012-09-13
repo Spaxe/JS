@@ -4,6 +4,7 @@
     <title>Javascript :: Interative Multimedia Design</title>
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/solarized-dark.css">
+    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <script type="text/javascript" src="../js/jquery-1.8.0.min.js"></script>
     <script type="text/javascript" src="../js/jquery.color.js"></script>
@@ -25,17 +26,11 @@
 
       <article>
         <p class="row3 grey">“<span class="white">Javascript is</span> a prototype-based scripting language that is <span class="white"><em>dynamic</em>, <em>weakly typed</em> and has <em>first-class functions</em>.</span>”</p>
-        <p class="row8 textright grey">— Wikipedia</p>
+        <p class="row9 textright grey">— Wikipedia</p>
       </article>
 
       <article>
         <p class="row5 white small">Javascript runs on every browser today.</p>
-      </article>
-
-      <article>
-        <p class="row3 white">Chocolate is tasty.</p>
-        <p class="row5 white">Computers can decide.</p>
-        <p class="row7 white">Interaction rocks.</p>
       </article>
 
       <article>
@@ -62,14 +57,11 @@ z = x * y</code></pre>
       </article>
 
       <article data-background="#e89423">
-        <p class="row0 black bold halfwidth right"><br><br>Variables<br>Types</p>
-        <p class="row0 brown halfwidth textright"><br><br>Data</p>
-        <p class="row6 black bold halfwidth right"><br>Operators<br>Functions<br>Flow Control</p>
-        <p class="row6 brown halfwidth textright"><br>Actions</p>
+        <p class="row2 black bold textright"><span class="brown">Data</span> Variables<br>Types</p>
+        <p class="row6 black bold textright"><span class="brown">Actions</span> Operators<br>Functions<br>Flow Control</p>
       </article>
 
       <article>
-        <p class="row1 bold">Variables</p>
         <pre class="row2 small"><code data-language="javascript">var price = 6.5;
 var quantity = 3;
 var item = "Italian Thick Chocolate";
@@ -79,6 +71,7 @@ var chocolateTypes = ["white", "milk",
                       "dark"];
 var orderStatus = {11: "preparing",
                    93: "served"};</code></pre>
+        <p class="row1 bold">Variables</p>
       </article>
 
       <article class="yellow">
@@ -172,7 +165,7 @@ var orderStatus = {11: "preparing",
         while
         with
         </p>
-        <p class="row9 grey small">(You also can't use any of these as names. )</p>
+        <p class="rowA grey small">(You also can't use any of these as names. )</p>
       </article>
 
       <article>
@@ -381,37 +374,6 @@ var answer = picky({colour: 'green'});</code></pre>
 var menu = ["chicken", "wine", "bread"];
 var cheesy = withCheese(menu);</code></pre>
         <p class="row1 bold">Loops</p>
-      </article>
-
-      <article>
-        <pre class="row2 smaller"><code data-language="javascript">function showDetails(orderHistory) {
-  for (var n in orderHistory) {
-    if (orderHistory.hasOwnProperty(n)) {
-      console.log(n + ": " + orderHistory[n]);
-    }
-  }
-}
-
-var orderHistory = {12: "roast beef",
-                    34: "chicken wrap"}
-showDetails(orderHistory);</code></pre>
-        <p class="row1 bold">Loops, lap 2</p>
-      </article>
-
-      <article>
-        <pre class="row2 smaller"><code data-language="javascript">function firstMatch(list, key) {
-  for (var k in list) {
-    if (list.hasOwnProperty(k) &&
-        list[k] === key) {
-      console.log(k);
-      break;
-    }
-  }
-}
-
-var data = {apple: 1, orange: 2, banana: 3};
-firstMatch(data, 'orange');</code></pre>
-        <p class="row1 bold">Breaking From Loops</p>
       </article>
 
       <article data-background="#e89423" class="black">
