@@ -169,7 +169,7 @@ var orderStatus = {11: "preparing",
         <span class="yellow">var</span>
         void
         volatile
-        <span class="yellow">while</span>
+        while
         with
         </p>
         <p class="row9 grey small">(You also can't use any of these as names. )</p>
@@ -381,6 +381,41 @@ var answer = picky({colour: 'green'});</code></pre>
 var menu = ["chicken", "wine", "bread"];
 var cheesy = withCheese(menu);</code></pre>
         <p class="row1 bold">Loops</p>
+      </article>
+
+      <article>
+        <pre class="row2 smaller"><code data-language="javascript">function showDetails(orderHistory) {
+  for (var n in orderHistory) {
+    if (orderHistory.hasOwnProperty(n)) {
+      console.log(n + ": " + orderHistory[n]);
+    }
+  }
+}
+
+var orderHistory = {12: "roast beef",
+                    34: "chicken wrap"}
+showDetails(orderHistory);</code></pre>
+        <p class="row1 bold">Loops, lap 2</p>
+      </article>
+
+      <article>
+        <pre class="row2 smaller"><code data-language="javascript">function firstMatch(list, key) {
+  for (var k in list) {
+    if (list.hasOwnProperty(k) &&
+        list[k] === key) {
+      console.log(k);
+      break;
+    }
+  }
+}
+
+var data = {apple: 1, orange: 2, banana: 3};
+firstMatch(data, 'orange');</code></pre>
+        <p class="row1 bold">Breaking From Loops</p>
+      </article>
+
+      <article data-background="#e89423" class="black">
+        <p class="row3 bold" style="font-size: 250px">break;</p>
       </article>
 
     </section>
