@@ -1,3 +1,4 @@
 Javascript Demos
 ================
-Tutorial files for University of Sydney, S2 2012.
+I keep my Javascript slides in this repo.  Look for branch `gh-pages` for all the slides.
+
