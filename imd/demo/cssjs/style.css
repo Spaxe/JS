@@ -1,0 +1,17 @@
+#container {
+    width: 200px;
+    overflow-x: hidden;
+}
+#slideshow {
+    width: 1100px;
+}
+#slideshow img {
+    display: inline-block;
+}
+
+#prev, #next {
+    font-size: 100px;
+}
+#next {
+    margin-left: 400px;
+}
